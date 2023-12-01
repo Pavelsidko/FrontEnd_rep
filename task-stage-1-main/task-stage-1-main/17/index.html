@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 17</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+
+        body, h1, h2{
+            margin: 0;
+        }
+
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+
+        .container{
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .header{
+            position: fixed; 
+            top: 0;
+            left: 0;
+            right: 0;
+            /*Прикрепляется к верху экрана*/
+            z-index: 2;
+            /*added*/
+            text-align: center;
+            background-color: cadetblue;
+            padding: 10px;
+        }
+
+
+        .chars-block p{
+            text-transform: capitalize;
+            font-size: 20px;
+            margin-bottom: 100px;
+        }
+
+        .chars-block__header{
+            position: sticky;
+            top: 0;
+            z-index: 3;
+            text-transform: capitalize;
+            /*added*/
+            padding: 10px;
+            background-color: aquamarine;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>THIS HEADER</h1>
+    </header>
+
+    <div class="container">
+
+        <div class="chars-block">
+            <h2 class="chars-block__header">А</h2>
+            <p>аня</p>
+            <p>алиса</p>
+            <p>алекс</p>
+            <p>аптека</p>
+            <p>автобус</p>
+            <p>америка</p>
+        </div>
+
+        <div class="chars-block">
+            <h2 class="chars-block__header">Б</h2>
+            <p>блин</p>
+            <p>бокс</p>
+            <p>бал</p>
+            <p>баня</p>
+            <p>билет</p>
+            <p>блик</p>
+        </div>
+
+        <div class="chars-block">
+            <h2 class="chars-block__header">В</h2>
+            <p>вода</p>
+            <p>ветка</p>
+            <p>весна</p>
+            <p>веник</p>
+            <p>внук</p>
+            <p>ворона</p>
+        </div>
+
+    </div>
+</body>
+</html>

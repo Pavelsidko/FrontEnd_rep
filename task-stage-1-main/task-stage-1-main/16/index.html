@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 16</title>
+    <style>
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+        body{
+            font-family: sans-serif;
+            margin: 0;
+        }
+        h1{
+            margin: 0;
+        }
+        img {
+            display: block;
+            vertical-align: middle;
+            max-width: 100%;
+            height: auto;
+        }
+        .container{
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .banner{
+            border: 1px solid red;
+            padding: 20px;
+            position: relative; /*added для того чтобы можно было позиционировать относительно родитеского объекта*/
+        }
+        .banner__wrapper{
+            height: 300px;
+        }
+        .banner__img{
+            height: 340px;
+        }
+
+        .banner__content{
+            position: relative; 
+            width: 600px;
+            height: 200px;
+            z-index: 2;
+            background-color: black;
+            color: white;
+        }
+/*added*/
+        .banner__media{
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;
+        }
+/*added*/
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <div class="banner__wrapper">
+                <div class="banner__content">
+                    <h1>Текст</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, assumenda est excepturi, perspiciatis et cupiditate ducimus enim delectus quidem vitae alias quas quia aperiam iusto itaque voluptatibus sint? Voluptatum, quos.</p>
+                </div>
+            </div>
+            <div class="banner__media">
+                <img class="banner__img" src="apple.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

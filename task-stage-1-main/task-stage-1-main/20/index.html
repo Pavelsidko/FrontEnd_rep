@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 20</title>
+    <style>
+        h1,
+        h2,
+        h3,
+        p,
+        ol,
+        ul,
+        body {
+        margin: 0;
+        background-color: var(--primary-color); /*added*/
+        }
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+
+        :root{
+            --primary-color: black;
+            --secondary-color: white;
+            --tertiary-color: #FFEB3B;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: white;
+            --secondary-color: black;
+            --tertiary-color: #FF5722;
+        }
+
+        body{
+            font-family: sans-serif;
+        }
+
+        .container{
+            max-width: 980px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .header{
+            background-color: var(--primary-color); 
+            color: var(--secondary-color);
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .items2{
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+        }
+        .item2{
+            border-color: var(--secondary-color); /*added ?*/
+            color: var(--secondary-color); /*added*/
+            display: flex;
+            flex-direction: column;
+        }
+        .item2__name{
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .item2__content{
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .item2__footer{
+            background-color: var(--secondary-color); /*added*/
+            color: var(--primary-color); /*added*/
+            padding: 5px;
+            text-align: center;
+        }
+        .item2__bg{
+            background-color: var(--secondary-color); /*added*/
+            color: var(--primary-color); /*added*/
+            height: 150px;
+        }
+        .item2__body{
+            padding: 10px;
+        }
+        .item2__date{
+            background-color: var(--tertiary-color);
+            padding: 3px;
+            display: inline-block;
+            font-size: 13px;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <p>THIS HEADER</p>
+    </div>
+
+    <div class="container">
+        <div class="items2">
+
+            <div class="item2">
+                <div class="item2__bg"></div>
+                <div class="item2__body">
+                    <h2 class="item2__name">Title 2</h2>
+                    <time class="item2__date">2023-12-12</time>
+                    <p class="item2__content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore eveniet laudantium ut rerum, aliquid accusantium quis fugit sint commodi dolorum eos! Dolores possimus nihil quibusdam ea debitis sunt eos placeat.</p>
+                    <div class="item2__footer">Read More</div>
+                </div>
+            </div>
+
+            <div class="item2">
+                <div class="item2__bg"></div>
+                <div class="item2__body">
+                    <h2 class="item2__name">Title 2</h2>
+                    <time class="item2__date">2023-12-12</time>
+                    <p class="item2__content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore eveniet laudantium ut rerum, aliquid accusantium quis fugit sint commodi dolorum eos! Dolores possimus nihil quibusdam ea debitis sunt eos placeat aliquid accusantium quis fugit sint commodi dolorum eos! Dolores possimus nihil quibusdam ea debitis sunt eos placeat.</p>
+                    <div class="item2__footer">Read More</div>
+                </div>
+            </div>
+
+            <div class="item2">
+                <div class="item2__bg"></div>
+                <div class="item2__body">
+                    <h2 class="item2__name">Title 3</h2>
+                    <time class="item2__date">2023-12-12</time>
+                    <p class="item2__content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore eveniet laudantium ut rerum, aliquid accusantium quis fugit sint commodi dolorum eos! Dolores possimus nihil quibusdam ea debitis sunt eos placeat. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore eveniet laudantium ut rerum, aliquid accusantium quis fugit sint commodi dolorum eos! Dolores possimus nihil quibusdam ea debitis sunt eos placeat. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore eveniet laudantium ut rerum, aliquid accusantium quis fugit sint commodi dolorum eos! Dolores possimus nihil quibusdam ea debitis sunt eos placeat.</p>
+                    <div class="item2__footer">Read More</div>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="js-switch">Сменить тему</button>
+    </div>
+
+    <script>
+        const root = document.documentElement
+        const switcher = document.querySelector('.js-switch');
+
+        switcher.addEventListener('click', () => {
+            root.hasAttribute('data-theme') ?
+             root.removeAttribute('data-theme', 'dark') :
+              root.setAttribute('data-theme', 'dark');
+        })
+    </script>
+</body>
+</html>

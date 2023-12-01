@@ -1,0 +1,98 @@
+h1,
+h2,
+h3,
+p,
+ol,
+ul,
+body {
+margin: 0;
+}
+
+img {
+    max-inline-size: 100%;
+    block-size: auto;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 1292px;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/*ширина экрана <= 1292px*/
+@media (max-width: 1291px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+/*ширина экрана <= 1024px*/
+@media (max-width: 1023px) {
+    .container {
+        max-width: 768px;
+    }
+}
+/*ширина экрана <= 768px*/
+@media (max-width: 767px) {
+    .container {
+        max-width: 576px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+/*ширина экрана <= 576px*/
+@media (max-width: 575px) {
+
+}
+
+.color{
+    background-color: red;
+}
+.page{}
+.page__cell{
+    margin-bottom: 30px;
+}
+
+.example-text{
+    background-color: yellow;
+    font-size: 32px;
+    font-weight: 400;
+    padding: 16px;
+}
+
+/*ширина экрана <= 1292px*/
+@media (max-width: 1291px) {
+    .example-text {
+        font-size: 24px;
+    }
+}
+/*ширина экрана <= 1024px*/
+@media (max-width: 1023px) {
+    .example-text {
+        padding: 12px;
+        font-size: 14px;
+        font-weight: 700;
+    }
+}
+
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    gap: 20px;
+    padding: 0 100px;
+}
+.gallery__item{
+    height: 200px;
+    background-color: beige;
+}

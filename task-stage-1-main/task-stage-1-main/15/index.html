@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 15</title>
+    <style>
+    .container{
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .grid-container {
+        display: grid;
+        gap: 5px;
+        width: 100%;
+        grid-template-columns: 150px 1fr 1fr;
+        grid-template-rows: 100px 400px 100px;
+        grid-template-areas: 
+        "header header header"
+        "navigation main main"
+        "footer footer footer";
+    }
+    .grid-header {
+        grid-area: header;
+        background-color: rgb(255, 146, 146);
+    }
+    .grid-nav{
+        grid-area: navigation;
+        background-color: rgb(251, 223, 14);
+    }
+    .grid-main{
+        grid-area: main;
+        background-color: rgb(153, 96, 96);
+    }
+    .grid-footer{
+        grid-area: footer;
+        background-color: chartreuse;
+    }
+    </style>
+</head>
+<body class="container">
+    <section class="grid-container">
+    <header class="grid-header">Header</header>
+    <nav class = "grid-nav">Navigation</nav>
+    <div class="grid-main">Main</div>
+    <footer class="grid-footer">Footer</footer>
+</section>
+</body>
+</html>

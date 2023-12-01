@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример</title>
+
+    <style>
+        h1,
+        h2,
+        h3,
+        p,
+        ol,
+        ul,
+        body {
+        margin: 0;
+        }
+
+
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container{
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .description{
+            display: flex;
+            flex-direction: row;
+        }
+        .description--direction{
+            flex-direction: row-reverse;
+        }
+
+        .description__col{
+            width: 50%;
+            position: relative;
+        }
+
+        .description__col--view:before{
+            content: '';
+            position: absolute;
+            width: 100vw;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background: #1a2c5d;
+        }
+
+        .description--direction  .description__col--view:before{
+            left: auto;
+            right: 0;
+        }
+
+        .description__text{
+            position: relative;
+            z-index: 10;
+            padding: 50px;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="description">
+            <div class="description__col"></div>
+            <div class="description__col description__col--view">
+                <div class="description__text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit optio reiciendis laudantium non omnis unde nulla vel, voluptate cupiditate aliquid corrupti maiores libero, dicta, nobis quis est ullam incidunt commodi.
+                </div>
+            </div>
+        </div>
+        <div class="description description--direction">
+            <div class="description__col"></div>
+            <div class="description__col description__col--view">
+                <div class="description__text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit optio reiciendis laudantium non omnis unde nulla vel, voluptate cupiditate aliquid corrupti maiores libero, dicta, nobis quis est ullam incidunt commodi.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

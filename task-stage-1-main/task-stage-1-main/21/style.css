@@ -1,0 +1,59 @@
+h1,
+h2,
+h3,
+p,
+ol,
+ul,
+body {
+margin: 0;
+}
+
+ol,li{
+    list-style: none;
+    padding: 0;
+}
+
+.menu__item .menu__link{
+    color: black;
+}
+.menu__item .menu__link:hover{
+    color: lightblue;
+}
+/*добавил выделение при наведении*/
+
+.menu__item .sub__menu {
+    position: absolute;
+    /*max-height: 0; можно через это*/
+    display: none;
+    left: 0;
+    top: 32px;
+    transition: max-height 0.5s ease-in-out;
+    background-color: bisque;
+   }
+   
+   .menu__item:hover .sub__menu {
+    flex-direction: column; /*добавил направление flex*/
+    display: flex;
+    /*max-height: 200px; можно через это*/
+   }
+
+
+
+
+img {
+    max-inline-size: 100%;
+    block-size: auto;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+
+.menu{
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
