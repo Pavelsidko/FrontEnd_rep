@@ -10,8 +10,11 @@ margin: 0;
 
 ol,li{
     list-style: none;
-    padding: 0;
+    padding: 10px;
+    display: flex;
 }
+
+
 
 img {
     max-inline-size: 100%;
@@ -29,4 +32,30 @@ body{
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
+}
+
+.breadcrumps__item{
+    flex-direction: row; /* added */
+}
+
+
+.breadcrumps__item:not(:last-of-type)::after{ /* у всех кроме последнего после айтема > */
+    content: '>';
+    padding-left:15px;
+    color: #cccccc;
+}
+
+.breadcrumps__link{
+    text-decoration: none;
+    color: #706e6ecc;
+}
+
+.breadcrumps__link:hover{
+    color: #2b2a2acc;
+}
+
+.breadcrumps__item--main{
+    background-image: url(home.svg);
+    background-repeat: no-repeat;
+    background-position: left;
 }

@@ -34,6 +34,10 @@ body{
     .container {
         max-width: 576px;
     }
+    .gallery{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding: 0 70px;
+    }
 }
 
 /*ширина экрана >= 768px*/
@@ -43,17 +47,29 @@ body{
         padding-left: 16px;
         padding-right: 16px;
     }
+    .gallery{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 0 70px;
+    }
 }
 /*ширина экрана >= 1024px*/
 @media (min-width: 1024px) {
     .container {
         max-width: 1024px;
     }
+    .gallery{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        padding: 0 70px;
+    }
 }
 /*ширина экрана >= 1292px*/
 @media (min-width: 1292px) {
     .container {
         max-width: 1292px;
+    }
+    .gallery{
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        padding: 0 70px;
     }
 }
 
