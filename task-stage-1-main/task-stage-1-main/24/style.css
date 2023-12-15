@@ -20,6 +20,16 @@ body{
     font-family: sans-serif;
 }
 
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+.gallery__item{
+    height: 200px;
+    background-color: beige;
+}
 
 .container {
     width: 100%;
@@ -34,10 +44,6 @@ body{
     .container {
         max-width: 576px;
     }
-    .gallery{
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-        padding: 0 70px;
-    }
 }
 
 /*ширина экрана >= 768px*/
@@ -49,7 +55,7 @@ body{
     }
     .gallery{
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        padding: 0 70px;
+        padding: 0 40px;
     }
 }
 /*ширина экрана >= 1024px*/
@@ -59,7 +65,6 @@ body{
     }
     .gallery{
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        padding: 0 70px;
     }
 }
 /*ширина экрана >= 1292px*/
@@ -104,13 +109,4 @@ body{
     }
 }
 
-.gallery{
-    display: grid;
-    grid-template-columns: repeat(9, minmax(0, 1fr));
-    gap: 20px;
-    padding: 0 100px;
-}
-.gallery__item{
-    height: 200px;
-    background-color: beige;
-}
+
