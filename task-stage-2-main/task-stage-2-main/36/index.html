@@ -9,7 +9,31 @@
     <script>
         const baseNumber = 10;
         // const arrayNumber =
-        Array.from({ baseNumber}, (v, k) => k);
+        const array = Array.from({ length: baseNumber}, (v, k) => k);
+        console.log(array)
+
+        let sum1 = 0;
+        for (let i = 0; i < array.length; i++) {
+            sum1 += array[i] * array[i];
+        }
+        console.log("for", sum1);
+
+        let sum2 = 0;
+        for (const num of array) {
+            sum2 += num * num;
+        }
+        console.log("for of", sum2);
+
+        let sum3 = 0;
+        array.forEach((item) => {
+            sum3 += item ** 2 
+        })
+        console.log("foreach", sum3)
+
+
+        const sum4 = array.reduce((acc, num) => acc + num * num, 0);
+        console.log("reduce", sum4);
+
     </script>
 </body>
 </html>

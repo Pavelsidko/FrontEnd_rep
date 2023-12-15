@@ -12,22 +12,25 @@
             age: 20,
             isAdult: true,
 
-            hello: () => console.log(`Hi ${this.firstName}`),
+            hello: function() { //поменял на обычные функции
+                console.log(`Hi ${this.firstName}`);
+            },
 
-            info: () => {
+            info: function() {
                 const split = function () {
                     return `
                         Name: ${this.firstName}
                         Age: ${this.age}
                         isAdult: ${this.isAdult ? 'Y': 'N'}
-                    `
+                    `;
                 }
-                console.log(split())
+                console.log(split.bind(this)()); //call this
             },
         }
 
-        obj.hello();
-        obj.info();
+        person.hello(); //person
+        person.info();
     </script>
+     
 </body>
 </html>

@@ -8,8 +8,23 @@
 <body>
     <script>
         function sum(value, type = 'odd') {
-
+            if (typeof value !== 'number') {
+                return NaN;
+            }
+        
+            let result = 0;
+            for (let i = 1; i <= value; i++) {
+                if ((type == 'odd' && i % 2 !== 0) || (type == 'even' && i % 2 === 0)) {
+                    result += i;
+                }
+            }
+            return result;
         }
+        const result1 = sum(6);
+        console.log(result1);  
+
+        const result2 = sum(6, 'even');
+        console.log(result2);  
     </script>
 </body>
 </html>

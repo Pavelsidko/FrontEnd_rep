@@ -22,10 +22,10 @@
             money: 300,
         }
 
-        const divider = () => ({})
+        const divider = '|'
 
 
-        const result = (`${object1}` + object1) + divider + (`${object2}` + object2) + divider + (`${object3}` + object3)
+        const result = (`${object1.name} ` + object1.money) + divider + (`${object2.name} ` + object2.money) + divider + (`${object3.name} ` + object3.money)
         console.log(result)
     </script>
 </body>

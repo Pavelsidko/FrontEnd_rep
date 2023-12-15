@@ -6,25 +6,28 @@
     <title>Задание 40</title>
 </head>
 <body>
-    <script>
-
-        const info = () => {
-
+    <script> 
+ 
+         const info = ({ firstName, lastName, age = 18 }) => {
+            console.log("Меня зовут " + firstName +" "+ lastName);
+            console.log("Мне " + age + " лет");
         }
+ 
+        const obj = { 
+            firstName: 'Иван', 
+            lastName: 'Иванов', 
+        } 
+ 
+        const altName = 'Иван2'; 
+        const altLast = 'Иванов2'; 
+        const altAge = 50; 
 
-        const obj = {
-            firstName: 'Иван',
-            lastName: 'Иванов',
-        }
 
-        const name = 'Иван2';
-        const last = 'Иванов2';
-        const age = 50;
-
-        info(obj);
-        console.log('----');
-        info({firstName: name, lastName: last, age});
-
+ 
+        info(obj); 
+        console.log('----'); 
+        info({firstName: altName, lastName: altLast, age: altAge}); 
+ 
     </script>
 </body>
 </html>

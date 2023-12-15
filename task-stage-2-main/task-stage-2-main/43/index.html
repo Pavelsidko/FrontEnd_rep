@@ -35,9 +35,14 @@
             },
         ]
 
-        const filterList = '....';
-        const transformList = '....';
-        const sortedList = '....';
+        const filterList = listUsers.filter(user => user.isAdult); //Map выбирает каждое значение с первого и формирует массив с каким то
+
+        const transformList = filterList.map(user => 
+            ({ ...user,
+            birthday: new Date(user.birthday).toLocaleDateString('ru-RU')
+        }));
+
+        const sortedList = transformList.slice().sort((a, b) => a.firstName.localeCompare(b.firstName));
 
         console.log(filterList)
         console.log(transformList)

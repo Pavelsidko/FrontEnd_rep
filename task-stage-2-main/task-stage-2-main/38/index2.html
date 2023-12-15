@@ -12,12 +12,19 @@
         const multiply = (x, y) => x * y;
         const divide = (x, y) => x / y;
 
-        const calculate = () => {
+        const calculate = (num1, num2, operation) => operation(num1, num2);
 
-        }
+        const result1 = calculate(1, 2, add);
+        const result2 = calculate(1, 2, subtract);
+        const result3 = calculate(1, 2, multiply);
+        const result4 = calculate(1, 2, divide);
 
-        const resultAdd = calculate(1, 2, add);
-        // .....
+        console.log(result1)
+        console.log(result2)
+        console.log(result4)
+        console.log(result3)
+        
+
 
     </script>
 </body>
