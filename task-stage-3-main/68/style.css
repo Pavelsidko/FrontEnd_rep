@@ -1,0 +1,32 @@
+img {
+    max-inline-size: 100%;
+    block-size: auto;
+}
+
+body{
+    font-family: 'Zen Dots', cursive;
+}
+
+.banner{
+    background-size: cover;
+}
+
+.gallery__inner{
+    margin-top: 50px;
+}
+
+.banner__title{
+    color: white;
+    font-size: 60px;
+    padding: 150px 0;
+}
+
+.gallery__title{
+    font-size: 48px;
+}
+
+.gallery__item{
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+}

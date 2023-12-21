@@ -11,10 +11,12 @@
 
         const words = ['День','Том','Гость','Выборы','Солнце','Ход','Речь','Смена','Бизнес','Качество','Республика','Сердце','Администрация','Поезд','Работник','Ресурс','Часть','Изучение','Бок','Понимание','Животное','Утро','Правда','Личность','Звонок','Урок','Командир','Американец','Заседание','Образ'];
 
+        const filteredArray = words.filter(word => 
+            word.toLowerCase().includes(search.toLowerCase())
+        );
 
-        const result = '';
+        const result = filteredArray.join(', ');
         console.log(result);
-
 
     </script>
 </body>

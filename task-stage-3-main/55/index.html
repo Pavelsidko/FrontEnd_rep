@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 55</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            margin: 0;
+        }
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+        .container{
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+
+
+    </style>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container">
+        <form action="" class="form">
+            <div class="form__cell">
+                <label for="name" class="label form__label">ФИО</label>
+                <input id="name"  class="input js-input" type="text" placeholder="ФИО">
+            </div>
+
+            <div class="form__cell">
+                <label for="email" class="label form__label">Email</label>
+                <input id="email"  class="input js-change" type="email" placeholder="Email">
+            </div>
+
+            <div class="form__cell">
+                <label for="tel" class="label form__label">Телефон</label>
+                <input id="tel"  class="input js-blur" type="tel" placeholder="Телефон">
+            </div>
+
+            <div class="form__cell">
+                <label for="tel2" class="label form__label">Телефон 2</label>
+                <input id="tel2"  class="input js-focus" type="tel2" placeholder="Телефон 2">
+            </div>
+
+
+
+            <div class="form__cell">
+                <label for="cars" class="label form__label">Машина</label>
+                <select id="cars" class="input input--select js-select">
+                    <option value="1">Машина 1</option>
+                    <option value="2">Машина 2</option>
+                </select>
+            </div>
+
+
+            <fieldset class="form__cell">
+                <legend class="label form__label">Выберите цвета</legend>
+                <div class="check-field">
+                    <input class="check-field__input js-checkbox-1" type="checkbox" name="colors" value="red" id="colors1">
+                    <label class="check-field__label" for="colors1">
+                      Красный
+                    </label>
+                </div>
+                <div class="check-field">
+                    <input class="check-field__input js-checkbox-2" type="checkbox" name="colors" value="blue" id="colors2">
+                    <label class="check-field__label" for="colors2">
+                      Синий
+                    </label>
+                </div>
+            </fieldset>
+
+
+            <fieldset class="form__cell">
+                <legend class="label form__label">Выберите цвет</legend>
+
+                <div class="check-field">
+                    <input class="check-field__input js-radio-1" value="1" type="radio" name="color" id="color1">
+                    <label class="check-field__label" for="color1">
+                      Красный
+                    </label>
+                </div>
+
+                <div class="check-field">
+                    <input class="check-field__input js-radio-2" value="2" type="radio" name="color" id="color2">
+                    <label class="check-field__label" for="color2">
+                      Синий
+                    </label>
+                </div>
+            </fieldset>
+
+        </form>
+    </div>
+
+    <script>
+
+
+    </script>
+</body>
+</html>
