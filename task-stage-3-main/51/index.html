@@ -83,11 +83,48 @@
 
         document.querySelector('.js-button-1').addEventListener('click', () => {
 
-        })
+            let itemBlock = document.createElement('div');
+            itemBlock.className = 'item';
+                    
+            let itemBg = document.createElement('div');
+            itemBg.className = 'item__bg';
+            itemBlock.appendChild(itemBg);
+
+            let itemBody = document.createElement('div');
+            itemBody.className = 'item__body';
+            itemBlock.appendChild(itemBody);
+                    
+            let itemName = document.createElement('h2');
+            itemName.className = 'item__name';
+            itemName.textContent = 'Title ' + (wrappers.children.length + 1);
+            itemBody.appendChild(itemName);
+                    
+            let itemContent = document.createElement('p');
+            itemContent.className = 'item__content';
+            itemContent.textContent = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore eveniet laudantium ut rerum, aliquid accusantium quis fugit sint commodi dolorum eos! Dolores possimus nihil quibusdam ea debitis sunt eos placeat.';
+            itemBody.appendChild(itemContent);
+                    
+            let itemFooter = document.createElement('div');
+            itemFooter.className = 'item__footer';
+            itemFooter.textContent = 'Read More';
+            itemBody.appendChild(itemFooter);
+
+            wrappers.appendChild(itemBlock);
+        });
 
         document.querySelector('.js-button-2').addEventListener('click', () => {
+           let itemBlock = '<div class="item">' +
+                '<div class="item__bg"></div>' +
+                '<div class="item__body">' +
+                    '<h2 class="item__name">Title 1</h2>'+
+                    '<p class="item__content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore eveniet laudantium ut rerum, aliquid accusantium quis fugit sint commodi dolorum eos! Dolores possimus nihil quibusdam ea debitis sunt eos placeat.</p>' +
+                    '<div class="item__footer">Read More</div>' +
+                '</div>' +
+            '</div>';
+            
+           wrappers.insertAdjacentHTML('beforeend', itemBlock);
+        });
 
-        })
     </script>
 </body>
 </html>

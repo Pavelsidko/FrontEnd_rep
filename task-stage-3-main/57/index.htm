@@ -42,6 +42,13 @@
     </div>
 
     <script>
+        let textSize = 16;
+        const items = document.querySelector('.tasks');
+        console.log(items)
+
+        items.addEventListener('click', function(event) {
+            event.target.closest('li').classList.toggle('complete');
+        });
 
     </script>
 </body>

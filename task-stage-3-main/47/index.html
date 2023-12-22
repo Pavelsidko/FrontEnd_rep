@@ -12,7 +12,20 @@
     <article>Поиск по тегу</article>
 
     <script>
+        var byId = document.getElementById("by-id");
+        console.log("getElementById:", byId);
 
+        var byClass = document.getElementsByClassName("by-class");
+        console.log("getElementsByClassName:", byClass);
+
+        var byTag = document.getElementsByTagName("article");
+        console.log("getElementsByTagName:", byTag);
+
+        var byQuery = document.querySelector('#by-id')
+        console.log("querySelector:", byQuery);
+
+        var allByQuery = document.querySelectorAll("#by-id, .by-class, article");
+        console.log("querySelectorAll:", allByQuery);
     </script>
 </body>
 </html>

@@ -26,7 +26,26 @@
     </div>
 
     <script>
-
+        document.querySelector('.button').addEventListener('click', () => {
+            const target = event.currentTarget;
+            console.dir(target)
+            
+            console.log('className:', target.className);
+            console.log('textContent:', target.textContent);
+            console.log('innerHTML:', target.innerHTML);
+            console.log('nodeName:', target.nodeName);
+            console.log('previousElementSibling:', target.previousElementSibling);
+            console.log('previousSibling:', target.previousSibling);
+            console.log('nextSibling:', target.nextSibling);
+            console.log('nextElementSibling:', target.nextElementSibling);
+            console.log('firstChild:', target.firstChild);
+            console.log('firstElementChild:', target.firstElementChild);
+            console.log('lastChild:', target.lastChild);
+            console.log('lastElementChild:', target.lastElementChild);
+            console.log('parentElement:', target.parentElement);
+            console.log('childNodes:', target.childNodes);
+            console.log('children:', target.children);
+        });
     </script>
 </body>
 </html>

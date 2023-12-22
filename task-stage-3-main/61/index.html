@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 61</title>
     <link rel="stylesheet" href="form.css">
     <style>
-        body{
+        body {
             font-family: sans-serif;
             margin: 0;
         }
-        *, ::after, ::before {
+
+        *,
+        ::after,
+        ::before {
             box-sizing: border-box;
         }
-        .container{
+
+        .container {
             max-width: 800px;
             width: 100%;
             margin: 0 auto;
             padding: 50px 0;
         }
 
-        .grid{
+        .grid {
             display: flex;
             gap: 20px;
         }
     </style>
 </head>
+
 <body class="container">
     <div class="grid">
         <input class="input js-input" type="text">
@@ -41,9 +47,29 @@
 
         const input = document.querySelector('.js-input')
         const select = document.querySelector('.js-select')
+        /*
+                input.addEventListener('change', (e) => {
+                    params.set('text', e.target.value);
+                    window.location.hash = params.toString();
+                    console.log(window.location)
+                });
+        
+                select.addEventListener('change', (e) => {
+                    params.set('cat_id', e.target.value);
+                    window.location.hash = params.toString();
+                });
+        */
 
+        input.addEventListener('change', (e) => {
+            params.set('text', e.target.value);
+            window.location.search = params.toString();
+        });
 
-
+        select.addEventListener('change', (e) => {
+            params.set('cat_id', e.target.value);
+            window.location.search = params.toString();
+        });
     </script>
 </body>
+
 </html>

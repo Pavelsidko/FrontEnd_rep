@@ -43,6 +43,28 @@
     </div>
 
     <script>
+        let article = document.querySelector('.article');
+        console.log(article)
+
+        let paragraphs = article.querySelectorAll('p');
+        console.log(paragraphs)
+
+        let firstDiv = article.querySelector('div:first-child');
+        firstDiv.classList.add('highlight');
+        console.log(firstDiv)
+
+       //paragraphs.forEach(paragraph => {
+       //   let span = paragraph.querySelector('span');
+       //   span.classList.add('text-secondary');
+       //});
+       
+ // Ошибка из за того что не у всех параграфов есть спан 
+        paragraphs.forEach(paragraph => {
+        let span = paragraph.querySelector('span');
+        if (span) {
+            span.classList.add('text-secondary');
+        }
+    });
 
     </script>
 </body>

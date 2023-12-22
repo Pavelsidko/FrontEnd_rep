@@ -105,6 +105,53 @@
             }
         ]
 
+
+        const wrappers = document.querySelector('.items');
+
+        lists.forEach(({id, name, description}) => {
+
+          let itemBlock = document.createElement('div');
+            itemBlock.className = 'item';
+                    
+            let itemBg = document.createElement('div');
+            itemBg.className = 'item__bg';
+            itemBlock.appendChild(itemBg);
+
+            let itemBody = document.createElement('div');
+            itemBody.className = 'item__body';
+            itemBlock.appendChild(itemBody);
+                    
+            let itemName = document.createElement('h2');
+            itemName.className = 'item__name';
+            itemName.textContent = name;
+            itemBody.appendChild(itemName);
+                    
+            let itemContent = document.createElement('p');
+            itemContent.className = 'item__content';
+            itemContent.textContent = description;
+            itemBody.appendChild(itemContent);
+                    
+            let itemFooter = document.createElement('div');
+            itemFooter.className = 'item__footer';
+            itemFooter.textContent = 'Read More';
+            itemBody.appendChild(itemFooter);
+
+            wrappers.appendChild(itemBlock);
+        });
+
+        const contentString =
+        lists.map( ({id, name, description}) => `
+            <div class="item"> 
+                <div class="item__bg"></div> 
+                <div class="item__body"> 
+                    <h2 class="item__name">${name}</h2>
+                    <p class="item__content">${description}</p>
+                    <div class="item__footer">Read More</div>
+                </div>
+            </div>
+        `).join("")
+
+        wrappers.insertAdjacentHTML('beforeend', contentString);
     </script>
 </body>
 </html>

@@ -37,7 +37,14 @@
     </div>
 
     <script>
+        let first = document.querySelector('.container ul li');
+        console.dir(first);
+    
+        let list = document.querySelectorAll('.container ul li:first-child');
+        
+        list.forEach(element => console.log(element));
 
     </script>
+
 </body>
 </html>

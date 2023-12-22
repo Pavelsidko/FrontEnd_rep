@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 59</title>
     <style>
-        body{
+        body {
             font-family: sans-serif;
             margin: 0;
         }
-        *, ::after, ::before {
+
+        *,
+        ::after,
+        ::before {
             box-sizing: border-box;
         }
-        .container{
+
+        .container {
             max-width: 800px;
             width: 100%;
             margin: 0 auto;
             padding: 50px 0;
         }
-        .search{
+
+        .search {
             display: flex;
             gap: 6px;
         }
-        .list__element--active{
+
+        .list__element--active {
             color: red;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="search">
@@ -39,12 +47,46 @@
 
     <script>
 
-        const words = ['День','Том','Гость','Выборы','Солнце','Ход','Речь','Смена','Бизнес','Качество','Республика','Сердце','Администрация','Поезд','Работник','Ресурс','Часть','Изучение','Бок','Понимание','Животное','Утро','Правда','Личность','Звонок','Урок','Командир','Американец','Заседание','Образ'];
+        const words = ['День', 'Том', 'Гость', 'Выборы', 'Солнце', 'Ход', 'Речь', 'Смена', 'Бизнес', 'Качество', 'Республика', 'Сердце', 'Администрация', 'Поезд', 'Работник', 'Ресурс', 'Часть', 'Изучение', 'Бок', 'Понимание', 'Животное', 'Утро', 'Правда', 'Личность', 'Звонок', 'Урок', 'Командир', 'Американец', 'Заседание', 'Образ'];
 
         const list = document.querySelector('.list')
         const input = document.querySelector('.search__input')
 
+        words.forEach((word) => {
+            const li = document.createElement('li');
+            li.textContent = word;
+            list.appendChild(li);
+        });
+
+        document.querySelector('.search__btn').addEventListener('click', () => {
+            const searchedValue = input.value.toLowerCase();
+            const filteredWords = words.filter(word => word.toLowerCase().includes(searchedValue));
+            list.innerHTML = ''; //Для удаления узла используется метод remove, или можно свойству innerHtml добавить пустое значение. 
+
+            filteredWords.forEach((word) => {
+                const li = document.createElement('li');
+                li.textContent = word;
+                list.appendChild(li);
+            });
+        });
+
+        document.querySelector('.search__clear').addEventListener('click', () => {
+            list.innerHTML = '';
+            words.forEach((word) => {
+                const li = document.createElement('li');
+                li.textContent = word;
+                list.appendChild(li);
+            });
+            input.value = '';
+        });
+
+        list.addEventListener('click', function(event) {
+            event.target.closest('li').classList.toggle('list__element--active');
+        });
+
+
 
     </script>
 </body>
+
 </html>

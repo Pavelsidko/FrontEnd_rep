@@ -108,13 +108,34 @@
                 <input id="email" value="text@gm.com"  class="input" type="text" placeholder="Email">
             </div> -->
 
+            
+
             <div class="form__footer">
                 <button class="button button--primary" type="submit">Отправить</button>
             </div>
         </form>
     </div>
     <script>
+        let formCell = document.createElement('div');
+        formCell.className = 'form__cell';
 
+        let label = document.createElement('label');
+        label.htmlFor = 'email';
+        label.className = 'label form__label';
+        label.textContent = 'Email';
+
+        let input = document.createElement('input');
+        input.id = 'email';
+        input.className = 'input';
+        input.type = 'text';
+        input.placeholder = 'Email';
+        input.value = 'text@gm.com'; 
+
+ 
+        formCell.append(label, input);
+
+        let form = document.querySelector('.form');
+        form.append(formCell);
     </script>
 </body>
 </html>

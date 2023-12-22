@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 54</title>
     <style>
-        .container{
+        .container {
             max-width: 800px;
             width: 100%;
             margin: 0 auto;
             padding: 50px 0;
         }
+
         .button {
             padding: 10px 20px;
             font-size: 24px;
@@ -18,12 +20,14 @@
             cursor: pointer;
             color: white;
         }
-        .grid{
+
+        .grid {
             display: flex;
             gap: 6px;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="grid">
@@ -34,7 +38,23 @@
     </div>
 
     <script>
+        const addButton = document.querySelector('.js-button-add');
+        const clickButton = document.querySelector('.js-button-click');
+        const removeButton = document.querySelector('.js-button-remove');
+
+        function funcClick() {
+            alert('CLICK!');
+        }
+
+        addButton.addEventListener('click', () => {
+            clickButton.addEventListener('click', funcClick);
+        });
+
+        removeButton.addEventListener('click', () => {
+            clickButton.removeEventListener('click', funcClick);
+        });
 
     </script>
 </body>
+
 </html>
