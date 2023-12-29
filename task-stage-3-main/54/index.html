@@ -46,14 +46,19 @@
             alert('CLICK!');
         }
 
+        let isRemoved = false;
+
         addButton.addEventListener('click', () => {
-            clickButton.addEventListener('click', funcClick);
+            if (!isRemoved) {
+                clickButton.addEventListener('click', funcClick);
+            }
         });
 
         removeButton.addEventListener('click', () => {
             clickButton.removeEventListener('click', funcClick);
+            isRemoved = true;
         });
-
+        
     </script>
 </body>
 

@@ -102,7 +102,61 @@
     </div>
 
     <script>
-        
+        //zadanie 1
+        const inputElements = document.querySelectorAll('.input');
+
+        inputElements.forEach((input) => {
+            switch (input.className) {
+                case 'input js-input':
+                    input.addEventListener('input', (event) => {
+                        console.log(event.target.value);
+                    });
+                    break;
+                case 'input js-change':
+                    input.addEventListener('change', (event) => {
+                        console.log(event.target.value);
+                    });
+                    break;
+                case 'input js-blur':
+                    input.addEventListener('blur', (event) => {
+                        console.log(event.target.value);
+                    });
+                    break;
+                case 'input js-focus':
+                    input.addEventListener('focus', (event) => {
+                        console.log(event.target.value);
+                    });
+                    break;
+            }
+        });
+
+        //zadanie 2
+        const checkboxes = document.querySelectorAll('.js-checkbox-1, .js-checkbox-2');
+        const radios = document.querySelectorAll('.js-radio-1, .js-radio-2');
+
+        function handleChange(event) {
+            console.log(`Checked: ${event.target.checked}`);
+            console.log(`Value: ${event.target.value}`);
+        }
+
+        checkboxes.forEach((checkbox) => {
+            checkbox.addEventListener('change', handleChange);
+        });
+
+        radios.forEach((radio) => {
+            radio.addEventListener('change', handleChange);
+        });
+
+        //zadanie 3
+        const select = document.querySelector('.js-select');
+
+        function handleSelectChange(event) {
+            console.log(`Value: ${event.target.value}`);
+            console.log(`Options: ${Array.from(event.target.options)}`);
+            console.log(`Selected Index: ${event.target.selectedIndex}`);
+        }
+
+        select.addEventListener('change', handleSelectChange);
     </script>
 </body>
 

@@ -54,10 +54,10 @@
             name: '',
         }
 
-        let username = JSON.parse(localStorage.getItem('user'));
-        if (username && username.name) {
-            nameSpan.textContent = username.name;
-            user.name = username.name;
+        let userFromSt = JSON.parse(localStorage.getItem('user'));
+        if (userFromSt && username.name) {
+            nameSpan.textContent = userFromSt.name;
+            user.name = userFromSt.name;
         }
 
         button.addEventListener('click', () => {
