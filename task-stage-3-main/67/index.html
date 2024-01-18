@@ -1,44 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 67</title>
     <style>
-        body{
+        body {
             font-family: sans-serif;
             margin: 0;
         }
-        *, ::after, ::before {
+
+        *,
+        ::after,
+        ::before {
             box-sizing: border-box;
         }
-        .container{
+
+        .container {
             max-width: 800px;
             width: 100%;
             margin: 0 auto;
             padding: 50px 0;
         }
-        .page__list{
+
+        .page__list {
             margin-top: 20px;
         }
-        .list{
+
+        .list {
             display: flex;
             flex-direction: column;
             gap: 5px;
         }
-        .list__message{
+
+        .list__message {
             padding: 5px;
         }
-        .list--send{
+
+        .list--send {
             background: #8BC34A;
         }
-        .list--receive{
+
+        .list--receive {
             background: #e4e4e4;
         }
-
-
     </style>
 </head>
+
 <body class="page">
     <div class="container">
         <div class="send-message">
@@ -60,10 +69,22 @@
         const websocket = new WebSocket(url);
 
         const sendMessage = (text) => {
-
+            // const date = new Date();
+            // const formatDate = date.toLocaleString();
+            newDiv = document.createElement('div');
+            newDiv.classList.add('list__message', 'list--send');
+            newDiv.textContent = `Отправлено: ${text} (${getDate()})`
+            list.prepend(newDiv);
+            websocket.send(text);
         }
 
         websocket.onmessage = (event) => {
+            // const date = new Date();
+            // const formatDate = date.toLocaleString();
+            newDiv = document.createElement('div');
+            newDiv.classList.add('list__message', 'list--receive');
+            newDiv.textContent = `Получено: ${event.data} (${getDate()})`
+            list.prepend(newDiv);
             console.log(event)
         };
 
@@ -78,9 +99,20 @@
         };
 
         button.addEventListener('click', () => {
-
+            const text = input.value;
+            if (text) {
+                sendMessage(text);
+                input.value = '';
+            }
         })
+
+        function getDate(){
+            const date = new Date();
+            const formatDate = date.toLocaleString();
+            return formatDate;
+        }
 
     </script>
 </body>
+
 </html>
